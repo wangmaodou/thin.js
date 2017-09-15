@@ -1,5 +1,5 @@
 var thin = new function() {
-	var c = 'rgb(0,0,0,255)';
+	var c = 'rgb(0,0,255)';
 	var i = '';
 	var s = '';
 	var t = 1000;
@@ -12,24 +12,24 @@ var thin = new function() {
 
 	}
 	this.color = function(color) {
-		if (!color) c = color;
+		if (color) c = color;
 		return this;
 	}
 	this.svg = function(image) {
-		if (!image) i = image;
+		if (image) i = image;
 		return this;
 	}
 	this.svgPath = function(imagePath) {
-		if (!imagePath)
-			i = '<img src="' + imagePath + '"/>'
+		if (imagePath)
+			i = '<img src="' + imagePath + '"/>';
 		return this;
 	}
 	this.delay = function(time) {
-		if (!time) t = time;
+		if (time) t = time;
 		return this;
 	}
 	this.slogan = function(word) {
-		if (!word) s = word;
+		if (word)s = word;
 		return this;
 	}
 	this.show = function() {
@@ -41,8 +41,12 @@ var thin = new function() {
 		exitView();
 		console.log('s...');
 	}
+	this.getView=function(){
+		return view;
+	}
 	var loadView = function() {
-		view.style = 'z-index:990;position:fixed;width:100%;height:100%;background:' + c + ';text-align:center;padding:' + h / 3 + ';';
+		body.style.margin=0;
+		view.style = 'z-index:990;position:fixed;width:100%;height:100%;background:' + c + ';text-align:center;padding:' + height / 3 + ';';
 		var content = '';
 		if (i != '' && s != '') {
 			content = i + '<br/>' + s;
@@ -56,6 +60,7 @@ var thin = new function() {
 	}
 	var showView = function() {
 		loadView();
+		isShow=true;
 		body.insertBefore(view, body.childNodes[0]);
 	}
 	var exitView = function() {
