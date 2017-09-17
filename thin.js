@@ -103,7 +103,7 @@ var thin = new function() {
 		body.style.margin=0;
 		view.style = 'z-index:990;position:fixed;width:100%;height:100%;background:' 
 					+ c + ';text-align:center;padding-top:' 
-					+ height / 3 + ';color:white;font-size:50px;';//font-weight: bold;';
+					+ height / 3 + ';color:white;font-size:50px;';
 		var content = '';
 		if (i != '' && s != '') {
 			content = i + '<br/>' + s;
