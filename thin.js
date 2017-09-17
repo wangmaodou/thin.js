@@ -85,7 +85,7 @@ var thin = new function() {
 							body.removeChild(view);
 							isShow=false;
 						}
-						o=o-4/60;
+						o=o-3/60;
 					},1000/60);
 			}
 			var diff = new Date().getTime() - startTime;
@@ -108,7 +108,7 @@ var thin = new function() {
 		if (i != '' && s != '') {
 			content = i + '<br/>' + s;
 		} else if (i == '' && s != '') {
-			content = '<div style="width:200px;height:200px;"/><br/>'+s;
+			content = s;
 		} else if (i != '' && s == '') {
 			content = i;
 		}
