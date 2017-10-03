@@ -9,15 +9,15 @@ A start page for web.
 ## Getting Started
 ```html
 <body>
-  <script src="thin.js"></script>
-  <script type="text/javascript">
-			thin.color('rgba(248,115,0,1)')
-				.slogan('Hello')
-				.delay(1000)
-				.show();
-			window.onload = function() {
-				thin.exit();
-			}
+	<script src="thin.js"></script>
+	<script type="text/javascript">
+		thin.color('rgba(248,115,0,1)')
+			.slogan('Hello')
+			.delay(1000)
+			.show();
+		window.onload = function() {
+			thin.exit();
+		}
 	</script>
 </body>
 ```
